@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusiFy</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- HTML -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="logo.svg" alt="Spotify Logo" height="32" class="invert">
+            <button class="home-btn"><img src="home.svg" alt="home" height="32" class="invert"></button>
+            <div class="search-bar">
+                <span class="search-icon">
+                    <img src="search.svg" alt="Search" height="32" class="invert">
+                </span>
+                <input type="text" placeholder="What do you want to play?">
+                <span class="browse-icon"><img src="bag.svg" alt="bag" height="32" class="invert"></span>
+            </div>
+        </div>
+
+        <div class="navbar-right">
+            <a href="#">Premium</a>
+            <a href="#">Support</a>
+            <a href="#">Download</a>
+            <span class="divider">|</span>
+            <a href="#">Install App</a>
+            <a href="#">Sign up</a>
+            <button class="login-btn">Log in</button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="menu">
+            <ul>
+                <li>Your Library</li>
+            </ul>
+        </nav>
+        <div class="library-box">
+            <div class="box">
+                <h4>Create your first playlist</h4>
+                <p>It's easy, we'll help you</p>
+                <button>Create playlist</button>
+            </div>
+            <div class="box">
+                <h4>Let's find some podcasts to follow</h4>
+                <p>We'll keep you updated on new episodes</p>
+                <button>Browse podcasts</button>
+            </div>
+            <div class="footer-links">
+                <a href="#">Legal</a>
+                <a href="#">Safety & Privacy Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+                <a href="#">About Ads</a>
+                <a href="#">Accessibility</a>
+            </div>
+            <div class="lang">
+                <button>🌐 English</button>
+            </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Content -->
+        <section class="content">
+            <h2>Trending songs</h2>
+            <div class="card-row">
+                <div class="card">
+                    <div class="card-container" data-song="Daaru.mp3">
+                        <img src="Cover/Daaru.jpeg" alt="">
+                        <button class="play-btn-overlay">▶</button>
+                    </div>
+                    <p><strong>Thori Si Daaru</strong></p>
+                    <span>AP Dillon, Shreya Ghosal</span>
+                </div>
+                <div class="card">
+                    <div class="card-container" data-song="PalPal.mp3">
+                        <img src="Cover/Pal.jpg" alt="">
+                        <button class="play-btn-overlay">▶</button>
+                    </div>
+                    <p><strong>Pal Pal</strong></p>
+                    <span>Afusic, AliSoomroMusic</span>
+                </div>
+                <div class="card">
+                    <div class="card-container" data-song="Azul.mp3">
+                        <img src="Cover/azul.jpg" alt="">
+                        <button class="play-btn-overlay">▶</button>
+                    </div>
+                    <p><strong>AZUL</strong></p>
+                    <span>Guru Randhawa, Gurjit Gill, Lavish Dhiman</span>
+                </div>
+                <div class="card">
+                    <div class="card-container" data-song="Sahiba.mp3">
+                        <img src="Cover/Sahiba.jpeg" alt="">
+                        <button class="play-btn-overlay">▶</button>
+                    </div>
+                    <p><strong>Sahiba</strong></p>
+                    <span>Aditya Rikhari</span>
+                </div>
+                <div class="card">
+                    <div class="card-container" data-song="Wushang.mp3">
+                        <img src="Cover/WuShang.jpg" alt="">
+                        <button class="play-btn-overlay">▶</button>
+                    </div>
+                    <p><strong>WuShang Clan</strong></p>
+                    <span>Dank Rishu, Foosie Gang, Adil</span>
+                </div>
+            </div>
+
+            <h2>Popular artists</h2>
+            <div class="artist-row">
+                <div class="artist">
+                    <img src="artists/honey.jpg" alt="">
+                    <p>Yo Yo Honey Singh</p>
+                </div>
+                <div class="artist">
+                    <img src="artists/rahman.jpg" alt="">
+                    <p>A.R Rahmaan</p>
+                </div>
+                <div class="artist">
+                    <img src="artists/bala.jpg" alt="">
+                    <p>Arpit Bala</p>
+                </div>
+                <div class="artist">
+                    <img src="artists/talwiinder.jpg" alt="">
+                    <p>Talwiinder</p>
+                </div>
+                <div class="artist">
+                    <img src="artists/subh.jpeg" alt="">
+                    <p>Subh</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="player-left">
+            <img src="Cover/Daaru.jpeg" alt="Song Cover" class="song-cover">
+            <div class="song-info">
+                <p class="song-title">Thori Si Daaru</p>
+                <p class="song-artist">AP Dillon, Shreya Ghosal</p>
+            </div>
+        </div>
+
+        <div class="player-center">
+            <div class="controls">
+                <button class="prev-btn"><img src="previous.svg" class="invert" alt=""></button>
+                <button id="play-btn"><img src="player.svg" class="invert"  alt=""></button>
+                <button class="next-btn"><img src="next.svg" class="invert" alt=""></button>
+            </div>
+            <div class="progress-bar">
+                <span class="current-time">0:00</span>
+                <input type="range" min="0" max="100" value="0" class="seek-bar">
+                <span class="duration">3:45</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <button>🔊</button>
+            <input type="range" min="0" max="100" value="80" class="volume-bar">
+        </div>
+    </div>
+
+    <script type="module" src="songs.js"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
