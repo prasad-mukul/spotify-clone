@@ -7,6 +7,7 @@ body {
   height: 100vh;
   flex-direction: column;
 }
+
 /* CSS */
 .navbar {
   display: flex;
@@ -102,19 +103,24 @@ body {
   background: #f0f0f0;
   font-size: 20px;
 }
-
+.layout{
+  display: flex;
+  flex: 1;
+}
 .sidebar {
-  width: 450px;
+  width: 400px; /* adjust size as you want */
   background: #000;
   color: #b3b3b3;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  position: fixed;
-  top: 80px;
+  position: relative;
+  top: 0;
   bottom: 0;
   left: 0;
+  flex-shrink: 0;
+
 }
 
 .sidebar h2 {
@@ -163,12 +169,25 @@ body {
 }
 
 .footer-links {
-  margin-top: 50px;
+  position: fixed;
+  bottom: 120px;     /* distance from bottom */
+  left: 0;
+  width: 400px;     /* same as your sidebar width */
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   font-size: 15px;
+  padding: 0 20px;  /* add padding so it aligns with sidebar content */
+  background: #000; /* optional, keeps background consistent */
 }
+.lang {
+  position: fixed;
+  bottom: 60px;   /* place it above footer links */
+  left: 0;
+  width: 450px;   /* same as sidebar */
+  padding: 0 20px;
+}
+
 .footer-links a {
   color: #b3b3b3;
   text-decoration: none;
@@ -191,12 +210,7 @@ body {
   color: #000;
 }
 
-.main {
-  margin-left: 250px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+
 
 .navbar {
   background: #181818;
@@ -230,12 +244,21 @@ body {
   cursor: pointer;
 }
 
+
+.main {
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
 .content {
   flex: 1;
-  padding: 20px;
+  max-width: 100%;
   overflow-y: auto;
-  margin-left: 200px;
+  margin-left: 0;
 }
+
+
 
 .card {
     background-color: #181818;
@@ -298,7 +321,8 @@ body {
 
 
 .card-row, .artist-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
   gap: 15px;
   margin: 15px 0 30px;
 }
@@ -321,18 +345,30 @@ body {
   color: #b3b3b3;
 }
 
+.artists-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 per row on large screens */
+  gap: 20px;
+  justify-items: center; /* center images */
+  margin: 20px 40px 0 0;
+}
+
 .artist {
   text-align: center;
-  width: 120px;
+  width: 100px; /* fixed width for consistency */
 }
+
 .artist img {
-  width: 100%;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  object-fit: cover; /* keeps circle images */
   margin-bottom: 10px;
 }
-.artist p{
-    font-size: 15px;
-    font-weight: 600;
+
+.artist p {
+  font-size: 15px;
+  font-weight: 600;
 }
 
 /* Music Player */
@@ -345,7 +381,6 @@ body {
     background: #181818;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 20px;
     color: white;
     border-top: 1px solid #333;
@@ -356,8 +391,26 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex: 1;              /* reserve space but don’t push center */
+    min-width: 180px;     /* prevent collapsing too much */
+    overflow: hidden;     /* cut off long text */
+}
+.player-center {
+    flex: 2;              /* always centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
+/* Right side: volume, extras */
+.player-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
 .song-cover {
     height: 60px;
     width: 60px;
@@ -516,4 +569,17 @@ body {
     border-radius: 50%;
     background: #1db954;
     cursor: pointer;
+}
+
+
+footer{    
+  bottom: 0;
+  left: 0;
+  width: 100%;          
+  text-align: center;  
+  background: #000;
+  color: #b3b3b3;
+  padding: 10px 0;
+  font-size: 20px;
+  border-top: 1px solid #222;
 }

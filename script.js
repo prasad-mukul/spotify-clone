@@ -36,7 +36,7 @@ function loadSong(index) {
 
     document.querySelector(".music-player").style.display = "flex";
     audio.play();
-    playBtn.querySelector("img").src = "pause.svg"; // change icon
+    playBtn.querySelector("img").src = "svgs/pause.svg"; // change icon
 }
 
 // --- Card click handling ---
@@ -50,10 +50,10 @@ cards.forEach((container, index) => {
 playBtn.addEventListener("click", () => {
     if (audio.paused) {
         audio.play();
-        playBtn.querySelector("img").src = "pause.svg";
+        playBtn.querySelector("img").src = "svgs/pause.svg";
     } else {
         audio.pause();
-        playBtn.querySelector("img").src = "player.svg";
+        playBtn.querySelector("img").src = "svgs/player.svg";
     }
 });
 
