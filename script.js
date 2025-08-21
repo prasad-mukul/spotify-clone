@@ -90,4 +90,11 @@ function formatTime(seconds) {
     let secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
 }
-
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar.style.display === 'block') {
+    sidebar.style.display = 'none';
+  } else {
+    sidebar.style.display = 'block';
+  }
+}

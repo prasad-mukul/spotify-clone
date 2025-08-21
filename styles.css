@@ -243,12 +243,18 @@ body {
   padding: 6px 15px;
   cursor: pointer;
 }
-
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
 
 .main {
   flex: 1;
   flex-direction: column;
   padding: 20px;
+  margin-top: 70px;
 }
 
 .content {
@@ -582,4 +588,38 @@ footer{
   padding: 10px 0;
   font-size: 20px;
   border-top: 1px solid #222;
+}
+
+/* ---------------------------------------MEDIA QURIES--------------------------------------- */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* hide by default */
+    width: 220px;
+    top: 60px;
+    background: #111;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .card-row {
+    grid-template-columns: repeat(5, 1fr); /* 3 per row */
+  }
+
+  .artists-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+  }
 }
